@@ -4,7 +4,7 @@
 <polymer-element name="himu62-wrapper" attributes="page">
 	<template>
 		<paper-spinner active="{{isLoading}}"></paper-spinner>
-		<core-ajax id="loader" loading="{{isLoading}}" method="POST" on-core-response="{{resWrapper}}"></core-ajax>
+		<core-ajax id="loader" loading="{{isLoading}}" on-core-response="{{resWrapper}}"></core-ajax>
 		<div fit id="content"></div>
 	</template>
 </polymer-element>
