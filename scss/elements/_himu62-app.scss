@@ -35,28 +35,26 @@ core-header-panel[main] {
 }
 
 core-drawer-panel {
-	#fabscreen {
+	paper-fab {
 		position: absolute;
-		overflow: hidden;
-	}
-
-	&[narrow] paper-fab,
-	&[selected="main"] paper-fab {
-		position: absolute;
-		bottom: 16px;
 		right: 16px;
-		@include transform(rotate(90deg));
-		@include transition(all .5s 1s ease);
-
-		opacity: 1;
-	}
-
-	&:not([narrow]) paper-fab,
-	&[selected="drawer"] paper-fab {
-		bottom: -32px;
-		@include transform(rotate(90deg));
-		@include transition(all .5s ease);
+		background-color: $accent;
+		z-index: 1;
+		@include transition(all .4s ease-out);
+		
+		top: -56px;
+		visibility: hidden;
 		opacity: 0;
+
+		&.show {
+			top: 36px;
+			visibility: visible;
+			opacity: 1;
+		}
+
+		/deep/ core-icon {
+			@include transform(rotate(90deg));
+		}
 	}
 }
 

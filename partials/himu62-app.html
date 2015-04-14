@@ -1,6 +1,3 @@
-<link rel="import" href="../polymer/polymer/polymer.html">
-<link rel="import" href="../polymer/font-roboto/roboto.html">
-<link rel="import" href="../polymer/core-icons/core-icons.html">
 <link rel="import" href="../polymer/core-drawer-panel/core-drawer-panel.html">
 <link rel="import" href="../polymer/core-header-panel/core-header-panel.html">
 <link rel="import" href="../polymer/core-toolbar/core-toolbar.html">
@@ -11,28 +8,28 @@
 <link rel="import" href="../polymer/paper-ripple/paper-ripple.html">
 <link rel="import" href="../polymer/paper-fab/paper-fab.html">
 
+<link rel="import" href="himu62-wrapper.html">
+
 <polymer-element name="himu62-app">
 	<template>
-		<core-drawer-panel rightDrawer disableSwipe>
+		<core-drawer-panel>
 			<core-header-panel drawer>
 				<core-toolbar>Menu</core-toolbar>
-				<core-menu selected="0">
-					<core-item label="Top"><paper-ripple fit></paper-ripple></core-item>
-					<core-item label="Profile"><paper-ripple fit></paper-ripple></core-item>
-					<core-item label="Designs"><paper-ripple fit></paper-ripple></core-item>
-					<core-item label="Web Sites"><paper-ripple fit></paper-ripple></core-item>
-					<core-item label="Web Applications"><paper-ripple fit></paper-ripple></core-item>
+				<core-menu selected="0" on-core-select="{{onSelect}}">
+					<core-item icon="home" label="Top"><paper-ripple fit></paper-ripple></core-item>
+					<core-item icon="account-box" label="Profile"><paper-ripple fit></paper-ripple></core-item>
+					<core-item icon="work" label="Contents"><paper-ripple fit></paper-ripple></core-item>
 				</core-menu>
 			</core-header-panel>
 			<core-header-panel main>
 				<core-toolbar>
-					<div flex>Portfolio</div>
 					<paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+					<div flex>Portfolio</div>
+					<paper-fab icon="arrow-back" on-tap="{{goPagetop}}"></paper-fab>
 				</core-toolbar>
+				
+				<himu62-wrapper></himu62-wrapper>
 
-				<div fit id="fabscreen">
-					<paper-fab icon="arrow-back" aria-label="page top" id="fabtop"></paper-fab>
-				</div>
 			</core-header-panel>
 		</core-drawer-panel>
 	</template>
