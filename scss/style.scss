@@ -1,0 +1,36 @@
+@import "compass";
+@import "partials/_colors.scss";
+@import "partials/_typography.scss";
+
+html {
+	background: $gray-50;
+}
+
+// define devices
+$type: xs sm md lg;
+@import "_base.scss";
+
+
+// smart phones
+@media only screen and (max-width: 766px) {
+	$type: xs;
+	@import "_base.scss";
+}
+
+// tablets
+@media only screen and (max-width: 750px) {
+	$type: sm;
+	@import "_base.scss";
+}
+
+// PCs
+@media only screen and (min-width: 970px) and (max-width: 1169px) {
+	$type: md;
+	@import "_base.scss";
+}
+
+// devices with high definition displays
+@media only screen and (min-width: 1170px) {
+	$type: lg;
+	@import "_base.scss";
+}

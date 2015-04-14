@@ -1,0 +1,62 @@
+himu62-app /deep/ {
+
+core-header-panel[drawer] {
+	background-color: $gray-100;
+
+	core-toolbar {
+		background-color: $amber-600;
+		color: $white;
+	}
+
+	core-menu {
+		margin: 12px 0;
+
+		core-item {
+			padding: 4px 12px;
+			font-size: 1.1em;
+
+			&.core-selected {
+				background-color: $white-weak;
+			}
+
+			paper-ripple {
+				color: $gray-300;
+			}
+		}
+	}
+}
+
+core-header-panel[main] {
+
+	core-toolbar {
+		background-color: $primary;
+		color: $white;
+	}
+}
+
+core-drawer-panel {
+	#fabscreen {
+		overflow: hidden;
+	}
+
+	&[narrow] paper-fab,
+	&[selected="main"] paper-fab {
+		position: absolute;
+		bottom: 16px;
+		right: 16px;
+		@include transform(rotate(90deg));
+		@include transition(all .5s 1s ease);
+
+		opacity: 1;
+	}
+
+	&:not([narrow]) paper-fab,
+	&[selected="drawer"] paper-fab {
+		bottom: -32px;
+		@include transform(rotate(90deg));
+		@include transition(all .5s ease);
+		opacity: 0;
+	}
+}
+
+}
